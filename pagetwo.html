@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mood Tracker</title>
+    <script src="app.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  </head>
+
+
+  <body>
+
+<!-- Ion App Tag-->
+  <ion-app>
+
+  <ion-content>
+
+<!-- The Header of the Page - SYMH - Acronym for Supporting Your Mental Health -->
+    <div class id="main-content">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-title>SYMH</ion-title>
+      </ion-toolbar>
+     </div>
+
+
+
+<!-- Ionic Card That Describes The Page (mood tracker)  -->
+<ion-card color ="success">
+  <img alt="Mood Tracker" src="images/mood2.jpg"/>
+  <ion-card-header>
+    <ion-card-title> Mood Tracker </ion-card-title>
+    <ion-card-subtitle>  Here is Your Mood Tracker, Tick the Boxes that Apply to you!</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+<!-- Ionic Card That Has An Image Showing Stress Statistics - sourced from the internet -->
+<ion-card>
+  <img alt="Mood Statistics" src="images/statistics.jpg"/>
+  <ion-card-header>
+    <ion-card-title> American Psychological Association </ion-card-title>
+    <ion-card-subtitle> Here are some statistics about recent studied Stress levels </ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+
+<!--Ionic Card that has several checkboxes for the user to select their mood, it also uses javascript + ID tags-->
+<ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-checkbox id="happyCheckbox" color="success">Today I Felt Happy!</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox id="averageCheckbox" color="success">Today I Felt Average!</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox id="sadCheckbox" color="success">Today I Felt Sad!</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox id="depressedCheckbox" color="success">Today I Felt Depressed!</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox id="angryCheckbox" color="success">Today I Felt Angry!</ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-card>
+
+<!-- Ionic Butoon with an ID tag that links to Javascript  -->
+<ion-card id="userdata">
+  <ion-button expand="block" color="success" onclick="saveDataAndDisplayCard()">
+    <ion-text>Submit Your Answers Here!</ion-text>
+  </ion-button>
+</ion-card>
+    
+      
+
+<!-- Down-side Navigation Menu with Custom Icons & Javascript -->
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button>
+    <ion-icon name="chevron-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button onclick="navigateToPage('pagethree.html')">
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button onclick="navigateToPage('pagetwo.html')">
+      <ion-icon name="checkbox-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button onclick="navigateToPage('mainpage.html')">
+     <ion-icon name="happy-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+<!-- Side Bar Navigation Menu, so the user has 2 Menus for ease of use -->
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar color="success">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+     <ion-item button onclick="navigateToPage('mainpage.html')">
+        Home Page
+      </ion-item>
+      <ion-item button onclick="navigateToPage('pagethree.html')">
+       Personal Journal
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  
+
+ 
+        <!-- Styles used for the Side Bar Navigation Menu (Blue Color Nav) -->
+      <style>
+        ion-menu::part(backdrop) {
+          background-color: #00d67dd2;
+        }
+  
+        ion-menu::part(container) {
+          border-radius: 0 20px 20px 0;
+      
+          box-shadow: 4px 0px 16px #2285152e;
+        }
+      </style>
+
+  
+ <!-- Ionic Footer - with the acronym name SYMH-->
+<ion-footer>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>SYMH</ion-title>
+    </ion-toolbar>
+  </ion-footer> 
+  
+  
+
+</ion-content>
+
+
+</ion-app>
+
+  </body>
+  
+  </html>

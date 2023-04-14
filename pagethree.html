@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Personal Journal</title>
+    <script src="app.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  </head>
+
+
+  <body>
+<!-- Ion App Tag-->
+  <ion-app>
+
+  <ion-content>
+
+<!-- The Header of the Page - SYMH - Acronym for Supporting Your Mental Health -->
+    <div class id="main-content">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-title>SYMH</ion-title>
+      </ion-toolbar>
+     </div>
+    
+
+  <!-- Ionic Card that describes the current page (personal journal) -->
+    <ion-card color="warning">
+      <img alt="Journal Cartoon" src="images/journal.jpg"/>
+      <ion-card-header>
+        <ion-card-title> Personal Journal </ion-card-title>
+        <ion-card-subtitle>Write Down All Your Ideas Below</ion-card-subtitle>
+      </ion-card-header>
+  
+
+ <!-- Ion Text + Card Input, for the user to write down their thoughts in the journal - uses Javascript-->
+ <ion-card>
+  <ion-item color="warning">
+    <ion-input id="thoughts" type="text" placeholder="Type All Your Thoughts Here..."></ion-input>
+    <ion-button color="light" onclick="saveThoughts()">Save</ion-button>
+  </ion-item>
+</ion-card>
+
+<!-- Ion Card Input, That saves the users entries, uses Javascript-->
+ <ion-card id="savedentries">
+  <ion-item color="light">
+<ion-text>Here Are Your Saved Entries</ion-text>
+  </ion-item>
+</ion-card>
+
+<!-- UK Timezone - Date and Time input -->
+<ion-card>
+  <ion-datetime locale="en-GB" hour-cycle="h12"></ion-datetime>    
+</ion-card>
+
+<!-- Down-side Navigation Menu with Custom Icons & Javascript -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name ="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button onclick="navigateToPage('pagethree.html')">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button onclick="navigateToPage('pagetwo.html')">
+        <ion-icon name="checkbox-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button onclick="navigateToPage('mainpage.html')">
+       <ion-icon name="happy-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+ 
+<!-- Side Bar Navigation Menu, so the user has 2 Menus for ease of use -->
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar color="warning">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+     <ion-item button onclick="navigateToPage('mainpage.html')">
+        Home Page
+      </ion-item>
+      <ion-item button onclick="navigateToPage('pagetwo.html')">
+       Mood Tracker
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  
+
+  <!-- Styles used for the Side Bar Navigation Menu (Blue Color Nav) -->
+  <style>
+    ion-menu::part(backdrop) {
+      background-color: #e7ff5cf3;
+    }
+  
+    ion-menu::part(container) {
+      border-radius: 0 20px 20px 0;
+  
+      box-shadow: 4px 0px 16px #faea08;
+    }
+  </style>
+  
+ <!-- Ionic Footer - with the acronym name SYMH-->
+  <ion-footer>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>SYMH</ion-title>
+      </ion-toolbar>
+    </ion-footer> 
+    
+  
+  </ion-content>
+
+
+</ion-app>
+</body>
+
+</html>

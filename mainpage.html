@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home Page</title>
+    <script src="app.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  </head>
+
+<body>
+<!-- Ion App Tag-->
+<ion-app>
+
+<ion-content>
+
+<!-- The Header of the Page - SYMH - Acronym for Supporting Your Mental Health -->
+    <div class id="main-content">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+        </ion-buttons>
+        <ion-title>SYMH</ion-title>
+      </ion-toolbar>
+     </div>
+
+     
+<!-- Ionic Card Giving out a Mental Health Tip -->
+<ion-card color ="primary">
+  <img alt="Mental Health Card 1" src="images/Mental Health Image 1.jpg"/>
+  <ion-card-header>
+    <ion-card-title> Mental Health Tip! </ion-card-title>
+    <ion-card-subtitle>Spending time in nature can improve your mental wellbeing!</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
+  <!-- Another Ionic Card focusing on Giving a User a Daily Joke-->
+  <ion-card color="primary">
+    <img alt="Mental Health Dinosaur" src="images/brain2.jpg" />
+    <ion-card-header>
+      <ion-card-title>Daily Joke!</ion-card-title> 
+      <ion-card-subtitle>Open the app everyday and get some very funny jokes! A Laugh a Day Keeps the Doctor Away!</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+    
+  
+ 
+  <!-- Funny jokes API -->
+  <ion-card>
+  <ion-button onclick="fetchJokes('fetchJokes')"> Click The Button To Get Some Very Funny Jokes!</ion-button>
+  <div id="jokesContainer"></div>
+</ion-card>
+
+
+  
+<!-- Down-side Navigation Menu with Custom Icons & Javascript -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button onclick="navigateToPage('pagethree.html')">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button onclick="navigateToPage('pagetwo.html')">
+        <ion-icon name="checkbox-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button onclick="navigateToPage('mainpage.html')">
+       <ion-icon name="happy-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+
+<!-- Side Bar Navigation Menu, so the user has 2 Menus for ease of use -->
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item button onclick="navigateToPage('pagetwo.html')">
+      Mood Tracker
+    </ion-item>
+   <ion-item button onclick="navigateToPage('pagethree.html')">
+      Personal Journal
+    </ion-item>
+  </ion-content>
+ </ion-menu>
+
+
+ 
+  <!-- Styles used for the Side Bar Navigation Menu (Blue Color Nav) -->
+<style>
+  ion-menu::part(backdrop) {
+    background-color: #1163fad2;
+  }
+
+  ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+
+    box-shadow: 4px 0px 16px #3060ff2e;
+  }
+</style>
+
+<!-- Ionic Footer - with the acronym name SYMH-->
+<ion-footer>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>SYMH</ion-title>
+    </ion-toolbar>
+  </ion-footer> 
+  
+
+</ion-content>
+
+
+
+</ion-app>
+
+
+</body>
+
+</html>
